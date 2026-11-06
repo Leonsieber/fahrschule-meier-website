@@ -23,7 +23,7 @@
     staticHost: /\.github\.io$|\.pages\.dev$|\.vercel\.app$/.test(location.hostname),
     async publicData(url) {
       const lang = new URL(url, location.href).searchParams.get('lang') || 'de';
-      const all = await (await fetch('data/public.json')).json();
+      const all = await (await fetch('data/public.json', { cache: 'no-cache' })).json();
       return { content: { ...all.content.de, ...(all.content[lang] || {}) }, lessonTypes: all.lessonTypes, adminFee: all.adminFee };
     },
     async api(method, url, body, isForm) {
