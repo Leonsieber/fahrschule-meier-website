@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt – Fahrschule Meier</title>
+  <meta name="description" content="Fahrschule Meier in Klarsreuti TG: Telefon, WhatsApp, E-Mail und Einzugsgebiet.">
+  <meta name="theme-color" content="#0074bc">
+  <link rel="icon" href="img/mark-dark.png">
+  <link rel="preload" href="fonts/barlow-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar" id="topbar"></header>
+  <main>
+    <section class="block contact-page">
+      <div class="wrap contact">
+        <div>
+          <h1 data-k="contact.title"></h1>
+          <p class="body-lg pre" data-k="contact.text"></p>
+          <a class="contact-phone" data-tel data-k="contact.phone"></a>
+          <div class="contact-actions">
+            <a class="btn" data-wa target="_blank" rel="noopener" data-t="btn.whatsapp"></a>
+            <a class="btn btn-ghost" href="login.html#register" data-t="btn.register"></a>
+          </div>
+          <a class="contact-mail" data-mail data-k="contact.email"></a>
+          <div class="contact-info">
+            <div><h2 data-t="contact.address_h"></h2><div class="pre" data-k="contact.address"></div></div>
+            <div><h2 data-t="contact.hours_h"></h2><div class="pre" data-k="contact.hours"></div></div>
+          </div>
+        </div>
+        <figure class="contact-map">
+          <div class="map-light" data-map data-view="250 30 520 330" data-view-sm="290 40 440 280"></div>
+          <figcaption><span class="pre" data-k="region.text"></span><small data-t="map.credit"></small></figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer"></footer>
+  <script src="js/i18n.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

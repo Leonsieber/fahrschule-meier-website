@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Über mich – Fahrschule Meier</title>
+  <meta name="description" content="Andreas Meier, Fahrlehrer Kategorie B im Oberthurgau, und der Audi A1 Automat, auf dem du fahren lernst.">
+  <meta name="theme-color" content="#0074bc">
+  <link rel="icon" href="img/mark-dark.png">
+  <link rel="preload" href="fonts/barlow-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar" id="topbar"></header>
+  <main>
+    <section class="block">
+      <div class="wrap intro">
+        <figure class="ph portrait" data-img="img.about" data-label="ph.about">
+        </figure>
+        <div>
+          <h1 data-k="about.name"></h1>
+          <p class="role" data-k="about.role"></p>
+          <p class="body-lg pre" data-k="about.text"></p>
+          <a class="btn" href="kontakt.html" data-t="nav.contact"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block tint" id="auto">
+      <div class="wrap car">
+        <div>
+          <h2 data-k="car.title"></h2>
+          <p class="body-lg pre" data-k="car.text"></p>
+          <dl class="spec" id="carSpec"></dl>
+        </div>
+        <figure class="ph car-ph" data-img="img.car" data-label="ph.car">
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer"></footer>
+  <script src="js/i18n.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preise – Fahrschule Meier</title>
+  <meta name="description" content="Preise für Fahrstunden Kategorie B bei der Fahrschule Meier im Oberthurgau, mit Rechner für deine Fahrausbildung.">
+  <meta name="theme-color" content="#0074bc">
+  <link rel="icon" href="img/mark-dark.png">
+  <link rel="preload" href="fonts/barlow-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar" id="topbar"></header>
+  <main>
+    <section class="page-top">
+      <div class="wrap narrow">
+        <h1 data-k="prices.title"></h1>
+        <p class="body-lg" data-k="prices.text"></p>
+      </div>
+    </section>
+
+    <section class="block slim">
+      <div class="wrap prices">
+        <div>
+          <div class="price-board" id="priceBoard"></div>
+          <p class="price-note pre" data-k="prices.note"></p>
+        </div>
+
+        <form class="calc" id="calc" onsubmit="return false">
+          <h2 data-t="calc.t"></h2>
+          <p data-t="calc.text"></p>
+          <div class="calc-row">
+            <label for="calcN"><span data-t="calc.lessons"></span><output id="calcNOut" for="calcN"></output></label>
+            <input type="range" id="calcN" min="1" max="50" step="1" value="25">
+          </div>
+          <div class="calc-row">
+            <span class="calc-label" data-t="calc.dur"></span>
+            <div class="seg" id="calcTypes"></div>
+          </div>
+          <div class="calc-total">
+            <span data-t="calc.total"></span>
+            <b>CHF <span id="calcTotal"></span></b>
+            <small id="calcFee"></small>
+          </div>
+          <p class="calc-note"><span data-t="calc.note"></span> <a href="ablauf.html#faq" data-t="calc.howmany"></a></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="block tint">
+      <div class="wrap book-split one">
+        <div>
+          <h2 data-t="p.how_t"></h2>
+          <ol class="how-line" id="how"></ol>
+          <a class="btn" href="login.html#buchen" data-t="btn.book"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer"></footer>
+  <script src="js/i18n.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fahrschule Meier – Fahrstunden in Berg TG, Erlen, Sulgen und Amriswil</title>
+  <meta name="description" content="Fahrschule Meier: Fahrstunden Kategorie B auf dem Audi A1 Automat in Berg TG, Erlen, Sulgen, Amriswil und Umgebung. Lektionen online buchen, Termin per WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Fahrschule Meier">
+  <meta property="og:title" content="Fahrschule Meier – Fahrstunden im Oberthurgau">
+  <meta property="og:description" content="Fahrstunden Kat. B auf dem Audi A1 Automat in Berg TG, Erlen, Sulgen und Amriswil. Lektionen online buchen.">
+  <meta name="theme-color" content="#0074bc">
+  <link rel="icon" href="img/mark-dark.png">
+  <link rel="preload" href="fonts/barlow-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar" id="topbar"></header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-map" id="heroMap" data-map data-drive data-view="-237 10 1033 492" data-view-sm="310 110 480 256"></div>
+      <figure class="hero-photo" data-img="img.hero" data-label="ph.hero"></figure>
+      <div class="wrap hero-in">
+        <h1 data-k="hero.title"></h1>
+        <p class="lead" data-k="hero.text"></p>
+        <p class="hero-price" id="heroPrice"></p>
+        <div class="hero-actions">
+          <a class="btn btn-white" href="login.html#buchen" data-t="btn.book"></a>
+          <a class="btn btn-line" href="preise.html" data-t="btn.prices"></a>
+        </div>
+      </div>
+      <p class="map-credit" data-t="map.credit"></p>
+    </section>
+
+    <section class="block" id="ueber-mich">
+      <div class="wrap intro">
+        <figure class="ph portrait" data-img="img.about" data-label="ph.about">
+        </figure>
+        <div>
+          <h2 data-k="about.name"></h2>
+          <p class="role" data-k="about.role"></p>
+          <p class="body-lg pre" data-k="about.text" data-first-para></p>
+          <ul class="checks" id="facts"></ul>
+          <a class="more" href="ueber-mich.html"><span data-t="link.about"></span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block tint">
+      <div class="wrap book-split">
+        <div>
+          <h2 data-t="p.how_t"></h2>
+          <ol class="how-line" id="how"></ol>
+          <a class="btn" href="login.html#buchen" data-t="btn.book"></a>
+        </div>
+        <div>
+          <div class="price-board" id="priceBoard"></div>
+          <a class="more" href="preise.html"><span data-t="link.prices"></span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <h2 class="center" data-k="steps.title"></h2>
+        <ol class="step-line" id="stepLine"></ol>
+        <p class="center"><a class="more" href="ablauf.html"><span data-t="link.steps"></span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </section>
+
+    <section class="block tint" id="region">
+      <div class="wrap region">
+        <div>
+          <h2 data-k="region.title"></h2>
+          <p class="body-lg pre" data-k="region.text"></p>
+        </div>
+        <ul class="signs" id="places" data-k="region.places"></ul>
+      </div>
+    </section>
+
+    <section class="closer">
+      <div class="wrap closer-in">
+        <div>
+          <h2 data-t="contact.card_t"></h2>
+          <p data-t="contact.card_text"></p>
+        </div>
+        <div class="closer-actions">
+          <a class="btn btn-white" href="login.html#register" data-t="btn.register"></a>
+          <a class="closer-phone" data-tel data-k="contact.phone"></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
