@@ -114,7 +114,7 @@
               ${u.role === 'admin' && opts.editable ? `<button class="btn btn-ghost btn-sm" id="editToggle">${App.t('btn.edit')}</button>` : ''}
               <a class="btn btn-sm" href="${u.role === 'admin' ? 'admin.html' : 'konto.html'}">${App.t(u.role === 'admin' ? 'btn.admin' : 'btn.account')}</a>
               ${opts.app ? `<button class="btn btn-ghost btn-sm hide-xs" id="logoutBtn">${App.t('btn.logout')}</button>` : ''}`
-            : `<a class="top-login" href="login.html">${App.t('btn.login')}</a>`}
+            : `<a class="btn btn-sm top-book" href="buchen.html">${App.t('btn.book')}</a>`}
           </div>
           <button class="menu-btn" id="menuBtn" aria-label="${App.t('menu.open')}" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
         </div>`;
@@ -150,6 +150,7 @@
           <div>
             <h2>${App.t('footer.pages')}</h2>
             <ul>
+              <li><a href="buchen.html">${App.t('btn.book')}</a></li>
               <li><a href="ueber-mich.html">${App.t('nav.about')}</a></li>
               <li><a href="preise.html">${App.t('nav.prices')}</a></li>
               <li><a href="ablauf.html">${App.t('nav.steps')}</a></li>
@@ -170,7 +171,7 @@
         <div class="wrap foot-end">
           <span>© ${new Date().getFullYear()} Fahrschule Meier</span>
           <a href="impressum.html">${App.t('footer.legal')}</a>
-          <a href="login.html">${App.t('btn.login')}</a>
+          ${App.staticHost ? '' : `<a href="login.html">${App.t('btn.login')}</a>`}
         </div>`;
       if (!document.querySelector('.callbar') && foot) {
         const bar = document.createElement('div');
@@ -178,7 +179,7 @@
         bar.innerHTML = `
           <a href="${esc(tel)}">${App.icon('phone')}${App.t('btn.call')}</a>
           <a href="${esc(App.waLink(phone))}" target="_blank" rel="noopener">${App.icon('chat')}${App.t('btn.whatsapp')}</a>
-          <a class="primary" href="login.html#buchen">${App.t('btn.book')}</a>`;
+          <a class="primary" href="buchen.html">${App.t('btn.book')}</a>`;
         document.body.appendChild(bar);
         document.body.classList.add('has-callbar');
       }

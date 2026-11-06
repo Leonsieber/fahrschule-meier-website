@@ -26,4 +26,6 @@ Barlow 400/500/600, selbst gehostet, normale Gross-/Kleinschreibung. Kein Versal
 Einmalig: das L-Schild fährt beim Laden die Route ab. Sonst nur kurze Zustandswechsel, die Kopfzeile schrumpft beim Scrollen, die Linie im Ablauf füllt sich. `prefers-reduced-motion` zeigt den Endzustand.
 
 ## Handy
+Gebucht wird ohne Konto auf `buchen.html`: Nachricht zusammenstellen und per WhatsApp, Telefon oder E-Mail schicken.
+
 Ab 960px abwärts: Klappmenü, Karte über dem Text, Animation startet erst, wenn die Karte sichtbar ist, feste Leiste unten mit Anrufen, WhatsApp, Buchen.

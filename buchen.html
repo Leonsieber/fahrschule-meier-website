@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lektionen buchen – Fahrschule Meier</title>
+  <meta name="description" content="Fahrstunden bei der Fahrschule Meier buchen, ohne Konto: per WhatsApp, Telefon oder E-Mail.">
+  <meta name="theme-color" content="#0074bc">
+  <link rel="icon" href="img/mark-dark.png">
+  <link rel="preload" href="fonts/barlow-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar" id="topbar"></header>
+  <main>
+    <section class="page-top">
+      <div class="wrap narrow">
+        <h1 data-t="btn.book"></h1>
+        <p class="body-lg" data-t="book.text"></p>
+      </div>
+    </section>
+
+    <section class="block slim">
+      <div class="wrap book" id="book">
+        <form class="book-form" onsubmit="return false">
+          <div class="field">
+            <label for="bookName" data-t="book.name"></label>
+            <input id="bookName" autocomplete="given-name">
+          </div>
+          <div class="field">
+            <span class="field-label" data-t="calc.dur"></span>
+            <div class="seg seg-light" id="bookTypes"></div>
+          </div>
+          <div class="field">
+            <label for="bookWhen" data-t="p.note_when"></label>
+            <input id="bookWhen" data-tp="book.when_ph">
+          </div>
+          <label class="check"><input type="checkbox" id="bookPermit"><span data-t="book.permit"></span></label>
+        </form>
+
+        <div class="book-send">
+          <h2 data-t="book.preview"></h2>
+          <p class="bubble" id="bookMsg" aria-live="polite"></p>
+          <a class="btn btn-wide" id="bookWa" target="_blank" rel="noopener"><span class="btn-ico" data-icon="chat"></span><span data-t="book.send"></span></a>
+          <p class="book-hint" data-t="book.hint"></p>
+
+          <h2 class="book-or" data-t="book.or"></h2>
+          <ul class="book-ways">
+            <li><a data-tel><span class="btn-ico" data-icon="phone"></span><span><b data-k="contact.phone"></b><small class="pre" data-k="contact.hours"></small></span></a></li>
+            <li><a id="bookMail"><span class="btn-ico" data-icon="mail"></span><span><b data-k="contact.email"></b><small data-t="book.mail"></small></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block tint">
+      <div class="wrap book-split one">
+        <div>
+          <h2 data-t="p.how_t"></h2>
+          <ol class="how-line" id="how"></ol>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="footer"></footer>
+  <script src="js/i18n.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

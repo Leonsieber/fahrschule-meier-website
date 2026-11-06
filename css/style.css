@@ -577,3 +577,30 @@ ol.how li::before { content: counter(how); display: grid; place-items: center; w
   .callbar a { font-size: 14px; }
   .top-actions { gap: 8px; }
 }
+
+/* Buchen ohne Konto */
+.top-book { white-space: nowrap; }
+.book { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
+.field-label { font-weight: 500; font-size: 16px; color: var(--ink-2); }
+.seg-light { background: var(--mist); box-shadow: inset 0 0 0 1px var(--line); }
+.seg-light button { color: var(--ink-2); }
+.seg-light button:hover { background: #e3e9ee; }
+.seg-light button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+.seg-light button[aria-pressed="true"]:hover { background: var(--blue-deep); }
+.book-send h2 { font-size: 24px; margin-bottom: 14px; }
+.bubble { position: relative; background: #dff0fa; color: var(--ink); padding: 16px 18px; border-radius: 12px 12px 12px 2px; margin: 0 0 18px; min-height: 92px; max-width: 58ch; overflow-wrap: anywhere; }
+.btn-wide { width: 100%; font-size: 18px; padding-block: 16px; }
+.btn-ico { display: inline-flex; flex: none; }
+.book-hint { font-size: 15px; color: var(--muted); margin: 10px 0 0; }
+.book-send h2.book-or { margin-top: 36px; font-size: 20px; margin-bottom: 8px; }
+.book-ways { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.book-ways li { border-bottom: 1px solid var(--line); }
+.book-ways a { display: flex; align-items: flex-start; gap: 14px; padding: 14px 2px; color: var(--ink); text-decoration: none; transition: color .15s; }
+.book-ways a:hover { color: var(--blue); }
+.book-ways .btn-ico { color: var(--blue); margin-top: 3px; }
+.book-ways b { display: block; font-weight: 600; font-size: 19px; line-height: 1.25; overflow-wrap: anywhere; }
+.book-ways small { display: block; font-size: 15px; color: var(--muted); margin-top: 2px; }
+@media (max-width: 960px) {
+  .top-book { display: none; }
+  .book { grid-template-columns: minmax(0, 1fr); }
+}

@@ -24,14 +24,14 @@
       <div>
         <h2 data-k="steps.${i}.t"></h2>
         <p data-k="steps.${i}.d"></p>
-        ${i === 4 ? `<p class="step-you"><b>${t('step.you')}</b><a class="btn btn-sm" href="login.html#buchen">${t('btn.book')}</a></p>` : ''}
+        ${i === 4 ? `<p class="step-you"><b>${t('step.you')}</b><a class="btn btn-sm" href="buchen.html">${t('btn.book')}</a></p>` : ''}
       </div>
     </li>`;
   }).join('');
   const faq = $('faqList');
   if (faq) faq.innerHTML = [1, 2, 3, 4, 5, 6, 7, 8].map((i) => `<details data-faq="${i}"><summary><span data-k="faq.${i}.q"></span></summary><p class="pre" data-k="faq.${i}.a"></p></details>`).join('');
   const how = $('how');
-  if (how) how.innerHTML = [1, 2, 3].map((i) => `<li>${t('p.how' + i)}</li>`).join('');
+  if (how) how.innerHTML = [1, 2, 3].map((i) => `<li>${t('how.' + i)}</li>`).join('');
 
   async function load() {
     data = await App.api('GET', '/api/public?lang=' + App.lang);
@@ -70,6 +70,7 @@
     renderPrices();
     renderCalc();
     renderSpec();
+    renderBook();
     if ($('heroMap')) renderSchema();
   }
 
@@ -138,7 +139,7 @@
       [t('fact.car'), t('fact.car_s')],
       [t('fact.cat'), t('fact.cat_s')],
       lt ? [t('fact.from', { p: App.chfShort(lt.price) }), t('fact.from_s', { m: lt.minutes })] : null,
-      [t('fact.online'), t('fact.online_s')],
+      [t('fact.book'), t('fact.book_s')],
     ].filter(Boolean).map(([b, s]) => `<li>${App.icon('check')}<span><b>${esc(b)}</b> ${esc(s)}</span></li>`).join('');
   }
 
@@ -201,6 +202,37 @@
       el.querySelector('#calcTotal').textContent = (calc.n * lt.price + Number(data.adminFee)).toLocaleString('de-CH');
       el.querySelector('#calcFee').textContent = t('calc.fee', { f: data.adminFee });
     }
+  }
+
+  // ---------- Buchen ohne Konto: Nachricht zusammenstellen, Versand erst in WhatsApp ----------
+  let bookId = null;
+  function renderBook() {
+    const el = $('book');
+    if (!el || !data.lessonTypes.length) return;
+    const c = data.content;
+    const phone = (c['contact.phone'] || '').trim();
+    const mail = (c['contact.email'] || '').trim();
+    const teacher = (c['about.name'] || '').trim().split(/\s+/)[0];
+    const name = $('bookName'), when = $('bookWhen'), permit = $('bookPermit'), types = $('bookTypes');
+    if (bookId === null) bookId = data.lessonTypes[0].id;
+    const paint = () => {
+      const lt = data.lessonTypes.find((l) => l.id === bookId);
+      types.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String(Number(b.dataset.id) === bookId)));
+      const n = name.value.trim(), w = when.value.trim();
+      const msg = [t('book.msg_hello', { a: teacher }), n && t('book.msg_name', { n }), t('book.msg_dur', { m: lt.minutes }), w && t('book.msg_when', { w }), permit.checked && t('book.msg_permit')].filter(Boolean).join(' ');
+      $('bookMsg').textContent = msg;
+      $('bookWa').href = App.waLink(phone, msg);
+      $('bookMail').href = `mailto:${mail}?subject=${encodeURIComponent(t('book.subject'))}&body=${encodeURIComponent(msg)}`;
+    };
+    if (!el.dataset.ready) {
+      el.dataset.ready = '1';
+      types.innerHTML = data.lessonTypes.map((l) => `<button type="button" data-id="${l.id}">${esc(t('price.min', { m: l.minutes }))}</button>`).join('');
+      types.addEventListener('click', (e) => { const b = e.target.closest('[data-id]'); if (b) { bookId = Number(b.dataset.id); paint(); } });
+      [name, when].forEach((i) => i.addEventListener('input', paint));
+      permit.addEventListener('change', paint);
+      el.querySelectorAll('[data-icon]').forEach((s) => { s.innerHTML = App.icon(s.dataset.icon); });
+    }
+    paint();
   }
 
   // ---------- Karte ----------

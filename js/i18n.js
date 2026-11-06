@@ -261,3 +261,33 @@ Object.assign(I18N.it, {
   'calc.t': 'Quanto costa all’incirca?', 'calc.text': 'Indica quante lezioni prevedi.', 'calc.lessons': 'Lezioni', 'calc.dur': 'Durata', 'calc.total': 'Totale', 'calc.fee': 'Di cui tassa unica: CHF {f}', 'calc.note': 'Esempio di calcolo solo per lezioni e tassa unica. Corsi e tasse ufficiali non sono inclusi.', 'calc.howmany': 'Quante me ne servono?',
   'car.spec_car': 'Veicolo', 'car.spec_gear': 'Cambio', 'car.spec_gear_v': 'Automatico', 'car.spec_cat': 'Categoria', 'car.spec_cat_v': 'B, automobili',
 });
+
+// Buchen ohne Konto
+Object.assign(I18N.de, {
+  'how.1': 'Schreib mir per WhatsApp oder ruf an', 'how.2': 'Wir machen zusammen den Termin ab', 'how.3': 'Du fährst los und bezahlst danach per Rechnung',
+  'fact.book': 'Ohne Konto', 'fact.book_s': 'Termin direkt per WhatsApp oder Telefon', 'contact.card_text': 'Schreib mir kurz per WhatsApp oder ruf an, dann schauen wir, wann es passt. Ein Konto brauchst du nicht.',
+  'book.text': 'Du brauchst kein Konto. Füll aus, was du schon weisst, und schick mir die Nachricht. Den Termin machen wir dann direkt ab.', 'book.name': 'Dein Name (optional)', 'book.permit': 'Ich habe den Lernfahrausweis schon', 'book.preview': 'Deine Nachricht', 'book.send': 'In WhatsApp öffnen', 'book.wa_short': 'Per WhatsApp schreiben', 'book.hint': 'Gesendet wird erst, wenn du die Nachricht in WhatsApp abschickst.', 'book.or': 'Lieber anders?', 'book.mail': 'Per E-Mail schreiben', 'book.subject': 'Fahrstunden',
+  'book.msg_hello': 'Hallo {a}, ich möchte gerne Fahrstunden bei dir nehmen.', 'book.msg_name': 'Ich heisse {n}.', 'book.msg_dur': 'Am liebsten {m} Minuten.', 'book.msg_when': 'Zeit habe ich meistens: {w}.', 'book.msg_permit': 'Den Lernfahrausweis habe ich schon.',
+});
+Object.assign(I18N.en, {
+  'how.1': 'Send me a WhatsApp or call', 'how.2': 'We arrange the date together', 'how.3': 'You drive, then pay by invoice',
+  'fact.book': 'No account', 'fact.book_s': 'arrange the date directly via WhatsApp or phone', 'contact.card_text': 'Send me a quick WhatsApp or call and we will see when it suits you. You do not need an account.',
+  'book.text': 'You do not need an account. Fill in what you already know and send me the message. We then arrange the date directly.', 'book.name': 'Your name (optional)', 'book.permit': 'I already have my learner’s permit', 'book.preview': 'Your message', 'book.send': 'Open in WhatsApp', 'book.wa_short': 'Message on WhatsApp', 'book.hint': 'Nothing is sent until you send the message in WhatsApp.', 'book.or': 'Prefer another way?', 'book.mail': 'Write an email', 'book.subject': 'Driving lessons',
+  'book.msg_hello': 'Hello {a}, I would like to take driving lessons with you.', 'book.msg_name': 'My name is {n}.', 'book.msg_dur': 'Ideally {m} minutes.', 'book.msg_when': 'I am usually free: {w}.', 'book.msg_permit': 'I already have my learner’s permit.',
+});
+Object.assign(I18N.fr, {
+  'how.1': 'Écris-moi par WhatsApp ou appelle', 'how.2': 'Nous fixons la date ensemble', 'how.3': 'Tu conduis et tu paies ensuite sur facture',
+  'fact.book': 'Sans compte', 'fact.book_s': 'date fixée directement par WhatsApp ou téléphone', 'contact.card_text': 'Écris-moi un WhatsApp ou appelle, et nous verrons quand cela te convient. Pas besoin de compte.',
+  'book.text': 'Pas besoin de compte. Remplis ce que tu sais déjà et envoie-moi le message. Nous fixons ensuite la date directement.', 'book.name': 'Ton nom (facultatif)', 'book.permit': 'J’ai déjà mon permis d’élève', 'book.preview': 'Ton message', 'book.send': 'Ouvrir dans WhatsApp', 'book.wa_short': 'Écrire sur WhatsApp', 'book.hint': 'Rien n’est envoyé tant que tu n’envoies pas le message dans WhatsApp.', 'book.or': 'Plutôt autrement ?', 'book.mail': 'Écrire un e-mail', 'book.subject': 'Leçons de conduite',
+  'book.msg_hello': 'Bonjour {a}, j’aimerais prendre des leçons de conduite avec toi.', 'book.msg_name': 'Je m’appelle {n}.', 'book.msg_dur': 'De préférence {m} minutes.', 'book.msg_when': 'Je suis généralement libre : {w}.', 'book.msg_permit': 'J’ai déjà mon permis d’élève.',
+});
+Object.assign(I18N.it, {
+  'how.1': 'Scrivimi su WhatsApp o chiama', 'how.2': 'Fissiamo la data insieme', 'how.3': 'Guidi e poi paghi con fattura',
+  'fact.book': 'Senza conto', 'fact.book_s': 'data fissata direttamente via WhatsApp o telefono', 'contact.card_text': 'Scrivimi su WhatsApp o chiama e vediamo quando ti va bene. Non serve un conto.',
+  'book.text': 'Non serve un conto. Compila ciò che sai già e mandami il messaggio. Poi fissiamo la data direttamente.', 'book.name': 'Il tuo nome (facoltativo)', 'book.permit': 'Ho già la licenza per allievi', 'book.preview': 'Il tuo messaggio', 'book.send': 'Apri in WhatsApp', 'book.wa_short': 'Scrivi su WhatsApp', 'book.hint': 'Non viene inviato nulla finché non invii il messaggio in WhatsApp.', 'book.or': 'Preferisci altro?', 'book.mail': 'Scrivi un’e-mail', 'book.subject': 'Lezioni di guida',
+  'book.msg_hello': 'Ciao {a}, vorrei prendere lezioni di guida con te.', 'book.msg_name': 'Mi chiamo {n}.', 'book.msg_dur': 'Preferibilmente {m} minuti.', 'book.msg_when': 'Di solito ho tempo: {w}.', 'book.msg_permit': 'Ho già la licenza per allievi.',
+});
+I18N.de['book.when_ph'] = 'z. B. Mo und Mi ab 17 Uhr';
+I18N.en['book.when_ph'] = 'e.g. Mon and Wed after 5 pm';
+I18N.fr['book.when_ph'] = 'p. ex. lun. et mer. dès 17 h';
+I18N.it['book.when_ph'] = 'es. lun. e mer. dalle 17';
