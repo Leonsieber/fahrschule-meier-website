@@ -1,6 +1,6 @@
 # Fahrschule Meier – Webseite
 
-Öffentliche Seiten, Login, Konto und Verwaltung als statisches Frontend. Auf GitHub Pages kommen die Texte aus `data/public.json`. Gebucht wird ohne Konto über `buchen.html` (WhatsApp, Telefon, E-Mail). Login, Konto und Verwaltung brauchen das Backend und sind dort nicht verlinkt.
+Öffentliche Seiten, Login, Konto und Verwaltung als statisches Frontend. Auf GitHub Pages kommen die Texte aus `data/public.json`. Gebucht wird über `buchen.html` direkt per WhatsApp, Telefon oder E-Mail, oder mit Konto über `login.html`. Login, Konto und Verwaltung sind verlinkt, funktionieren aber erst mit dem Backend.
 
 ## Lokal ansehen
 

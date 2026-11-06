@@ -104,7 +104,7 @@
       el.innerHTML = `
         <div class="wrap">
           <a class="brand" href="index.html" aria-label="Fahrschule Meier"><img src="img/logo-dark.png" alt="Meier Fahrschule" width="523" height="159"></a>
-          <nav class="nav" id="mainnav">${links.map(([href, k]) => `<a href="${href}"${href === page ? ' aria-current="page"' : ''}>${App.t(k)}</a>`).join('')}${u && opts.app ? `<a href="#" class="nav-app" id="logoutNav">${App.t('btn.logout')}</a>` : ''}</nav>
+          <nav class="nav" id="mainnav">${links.map(([href, k]) => `<a href="${href}"${href === page ? ' aria-current="page"' : ''}>${App.t(k)}</a>`).join('')}${u && opts.app ? `<a href="#" class="nav-app" id="logoutNav">${App.t('btn.logout')}</a>` : ''}${u ? '' : `<a href="login.html" class="nav-login">${App.t('btn.login')}</a>`}</nav>
           <div class="top-actions">
             <a class="top-phone" id="topPhone" hidden>${App.icon('phone')}<span></span></a>
             <label class="lang" title="Sprache / Language"><select id="langsel" aria-label="Sprache">
@@ -114,7 +114,7 @@
               ${u.role === 'admin' && opts.editable ? `<button class="btn btn-ghost btn-sm" id="editToggle">${App.t('btn.edit')}</button>` : ''}
               <a class="btn btn-sm" href="${u.role === 'admin' ? 'admin.html' : 'konto.html'}">${App.t(u.role === 'admin' ? 'btn.admin' : 'btn.account')}</a>
               ${opts.app ? `<button class="btn btn-ghost btn-sm hide-xs" id="logoutBtn">${App.t('btn.logout')}</button>` : ''}`
-            : `<a class="btn btn-sm top-book" href="buchen.html">${App.t('btn.book')}</a>`}
+            : `<a class="top-login" href="login.html">${App.t('btn.login')}</a><a class="btn btn-sm top-book" href="buchen.html">${App.t('btn.book')}</a>`}
           </div>
           <button class="menu-btn" id="menuBtn" aria-label="${App.t('menu.open')}" aria-expanded="false" aria-controls="mainnav"><span></span><span></span><span></span></button>
         </div>`;
@@ -171,7 +171,7 @@
         <div class="wrap foot-end">
           <span>© ${new Date().getFullYear()} Fahrschule Meier</span>
           <a href="impressum.html">${App.t('footer.legal')}</a>
-          ${App.staticHost ? '' : `<a href="login.html">${App.t('btn.login')}</a>`}
+          <a href="login.html">${App.t('btn.login')}</a>
         </div>`;
       if (!document.querySelector('.callbar') && foot) {
         const bar = document.createElement('div');
@@ -190,6 +190,7 @@
       return `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
     },
     ICONS: {
+      user: '<circle cx="12" cy="8.5" r="4"/><path d="M4.5 20.5c1-3.8 3.9-5.8 7.5-5.8s6.5 2 7.5 5.8"/>',
       image: '<rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><circle cx="8.5" cy="9.5" r="1.7"/><path d="M4 17l5-5 3.5 3.5 2.5-2.5 5 5"/>',
       phone: '<path d="M6.6 3.5h2.6l1.5 4-2 1.5a12 12 0 0 0 6.3 6.3l1.5-2 4 1.5v2.6c0 1.2-1 2.1-2.2 2.1A15.8 15.8 0 0 1 4.5 5.7c0-1.2.9-2.2 2.1-2.2Z"/>',
       chat: '<path d="M4 20l1.3-3.9A8 8 0 1 1 8.3 19L4 20Z"/>',

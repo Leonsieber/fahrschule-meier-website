@@ -192,15 +192,13 @@ body.editing .ph { outline: 2px dashed var(--blue); outline-offset: -2px; }
 .how-line li:last-child { padding-bottom: 0; }
 
 .price-board { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
-.price-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 20px; padding: 22px 26px; border-bottom: 1px solid var(--line); }
+.price-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 20px; padding: 22px 26px; border-bottom: 1px solid var(--line); }
 .price-row:last-child { border-bottom: 0; }
 .price-row .what { font-weight: 600; font-size: 19px; line-height: 1.25; }
 .price-row .what small { display: block; font-weight: 400; font-size: 16px; color: var(--muted); margin-top: 2px; }
 .price-row .amount { white-space: nowrap; font-size: 22px; font-weight: 500; font-variant-numeric: tabular-nums; }
 .price-row .amount b { font-size: 48px; font-weight: 600; letter-spacing: -.02em; line-height: 1; }
 .price-row .amount span { font-size: 18px; font-weight: 400; color: var(--muted); }
-.price-row.fee .what { font-weight: 500; font-size: 17px; }
-.price-row.fee .amount b { font-size: 32px; }
 .price-row input { font: inherit; width: 96px; padding: 2px 6px; border: 1.5px solid var(--blue); border-radius: 4px; }
 .price-note { font-size: 16px; color: var(--muted); margin: 12px 2px 0; }
 .price-board + .more { margin-top: 18px; }
@@ -531,8 +529,7 @@ ol.how li::before { content: counter(how); display: grid; place-items: center; w
   .signs li { font-size: 21px; padding: 14px; }
   .price-row { padding: 18px; gap: 12px; }
   .price-row .amount b { font-size: 40px; }
-  .price-row.fee .amount b { font-size: 28px; }
-  .calc { padding: 26px 22px 22px; }
+    .calc { padding: 26px 22px 22px; }
   .steps li { grid-template-columns: 48px minmax(0, 1fr); gap: 16px; }
   .steps .step-ico { width: 48px; height: 48px; }
   .steps::before, .steps::after { left: 23px; }
@@ -603,4 +600,21 @@ ol.how li::before { content: counter(how); display: grid; place-items: center; w
 @media (max-width: 960px) {
   .top-book { display: none; }
   .book { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Login wieder sichtbar, Konto als eine von mehreren Möglichkeiten */
+.top-login { font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.top-login:hover { color: var(--blue); }
+.nav .nav-login { display: none; }
+.auth-direct { margin-top: 36px; }
+.auth-direct h2 { font-size: 20px; margin-bottom: 4px; }
+.auth-direct > p { color: var(--muted); margin: 0 0 12px; }
+@media (max-width: 960px) {
+  .top-login { display: none; }
+  .nav .nav-login { display: block; color: var(--blue); }
+}
+/* Langer Gebührentext: auf dem Handy Preis darunter, damit Zahlen und CHF rechts bündig bleiben */
+@media (max-width: 480px) {
+  .price-row.fee { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .price-row.fee .amount { justify-self: end; }
 }

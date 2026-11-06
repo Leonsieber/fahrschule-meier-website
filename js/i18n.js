@@ -291,3 +291,29 @@ I18N.de['book.when_ph'] = 'z. B. Mo und Mi ab 17 Uhr';
 I18N.en['book.when_ph'] = 'e.g. Mon and Wed after 5 pm';
 I18N.fr['book.when_ph'] = 'p. ex. lun. et mer. dès 17 h';
 I18N.it['book.when_ph'] = 'es. lun. e mer. dalle 17';
+
+// Konto als Option neben dem direkten Kontakt
+Object.assign(I18N.de, {
+  'book.text': 'Füll aus, was du schon weisst, und schick mir die Nachricht. Den Termin machen wir dann direkt ab. Ein Konto ist freiwillig.',
+  'book.account': 'Mit Konto buchen', 'book.account_s': 'Anmelden oder registrieren, Termine und Rechnungen an einem Ort',
+  'auth.direct': 'Lieber ohne Konto?', 'auth.direct_s': 'Du kannst mich auch direkt erreichen.',
+  'err.preview': 'Das Konto ist hier noch nicht aktiv. Anmelden und Registrieren gehen erst mit dem Server, WhatsApp, Telefon und E-Mail funktionieren schon.',
+});
+Object.assign(I18N.en, {
+  'book.text': 'Fill in what you already know and send me the message. We then arrange the date directly. An account is optional.',
+  'book.account': 'Book with an account', 'book.account_s': 'Log in or register, appointments and invoices in one place',
+  'auth.direct': 'Prefer no account?', 'auth.direct_s': 'You can also reach me directly.',
+  'err.preview': 'Accounts are not active here yet. Login and registration need the server; WhatsApp, phone and email already work.',
+});
+Object.assign(I18N.fr, {
+  'book.text': 'Remplis ce que tu sais déjà et envoie-moi le message. Nous fixons ensuite la date directement. Le compte est facultatif.',
+  'book.account': 'Réserver avec un compte', 'book.account_s': 'Se connecter ou s’inscrire, rendez-vous et factures au même endroit',
+  'auth.direct': 'Plutôt sans compte ?', 'auth.direct_s': 'Tu peux aussi me joindre directement.',
+  'err.preview': 'Le compte n’est pas encore actif ici. La connexion et l’inscription nécessitent le serveur ; WhatsApp, le téléphone et l’e-mail fonctionnent déjà.',
+});
+Object.assign(I18N.it, {
+  'book.text': 'Compila ciò che sai già e mandami il messaggio. Poi fissiamo la data direttamente. Il conto è facoltativo.',
+  'book.account': 'Prenota con un conto', 'book.account_s': 'Accedi o registrati, appuntamenti e fatture in un posto',
+  'auth.direct': 'Preferisci senza conto?', 'auth.direct_s': 'Puoi anche contattarmi direttamente.',
+  'err.preview': 'Il conto non è ancora attivo qui. Accesso e registrazione richiedono il server; WhatsApp, telefono ed e-mail funzionano già.',
+});
