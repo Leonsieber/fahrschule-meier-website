@@ -1,0 +1,11 @@
+{
+  "name": "fahrschule-meier-website",
+  "private": true,
+  "version": "1.0.0",
+  "engines": { "node": "22.x || 24.x" },
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "@vercel/blob": "^2.8.2",
+    "qrcode": "^1.5.4"
+  }
+}

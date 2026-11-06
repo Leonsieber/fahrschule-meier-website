@@ -20,7 +20,7 @@
     },
     esc(s) { return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); },
     // Auf statischem Hosting gibt es kein Backend: Texte kommen aus data/public.json
-    staticHost: /\.github\.io$|\.pages\.dev$|\.vercel\.app$/.test(location.hostname),
+    staticHost: /\.github\.io$/.test(location.hostname),
     async publicData(url) {
       const lang = new URL(url, location.href).searchParams.get('lang') || 'de';
       const all = await (await fetch('data/public.json', { cache: 'no-cache' })).json();
@@ -101,6 +101,7 @@
       const u = App.user;
       const page = location.pathname.split('/').pop() || 'index.html';
       const links = [['ueber-mich.html', 'nav.about'], ['preise.html', 'nav.prices'], ['ablauf.html', 'nav.steps'], ['ablauf.html#faq', 'nav.faq'], ['kontakt.html', 'nav.contact']];
+      el.classList.toggle('logged', !!u);
       el.innerHTML = `
         <div class="wrap">
           <a class="brand" href="index.html" aria-label="Fahrschule Meier"><img src="img/logo-dark.png" alt="Meier Fahrschule" width="523" height="159"></a>

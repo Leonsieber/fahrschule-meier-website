@@ -317,3 +317,13 @@ Object.assign(I18N.it, {
   'auth.direct': 'Preferisci senza conto?', 'auth.direct_s': 'Puoi anche contattarmi direttamente.',
   'err.preview': 'Il conto non è ancora attivo qui. Accesso e registrazione richiedono il server; WhatsApp, telefono ed e-mail funzionano già.',
 });
+
+Object.assign(I18N.de, { 'err.image_type': 'Bitte ein Bild als JPG, PNG oder WebP wählen.', 'err.too_large': 'Das Bild ist zu gross (maximal 4 MB).' });
+Object.assign(I18N.en, { 'err.image_type': 'Please choose a JPG, PNG or WebP image.', 'err.too_large': 'The image is too large (4 MB at most).' });
+Object.assign(I18N.fr, { 'err.image_type': 'Merci de choisir une image JPG, PNG ou WebP.', 'err.too_large': 'L’image est trop lourde (4 Mo au maximum).' });
+Object.assign(I18N.it, { 'err.image_type': 'Scegli un’immagine JPG, PNG o WebP.', 'err.too_large': 'L’immagine è troppo grande (massimo 4 MB).' });
+
+Object.assign(I18N.de, { 'st.cancelled': 'Abgesagt' });
+Object.assign(I18N.en, { 'st.cancelled': 'Cancelled' });
+Object.assign(I18N.fr, { 'st.cancelled': 'Annulé' });
+Object.assign(I18N.it, { 'st.cancelled': 'Annullato' });

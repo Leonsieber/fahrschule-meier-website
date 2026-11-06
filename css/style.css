@@ -618,3 +618,68 @@ ol.how li::before { content: counter(how); display: grid; place-items: center; w
   .price-row.fee { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .price-row.fee .amount { justify-self: end; }
 }
+
+/* Rechnung */
+.invoice-page { background: var(--mist); }
+.invoice-wrap { max-width: 794px; margin: 0 auto; padding: 28px 16px 56px; }
+.invoice-tools { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.invoice { background: #fff; padding: clamp(24px, 6vw, 56px); border: 1px solid var(--line); }
+.inv-head { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin-bottom: 40px; }
+.inv-head img { height: 56px; width: auto; }
+.invoice address { font-style: normal; font-size: 15px; line-height: 1.45; }
+.inv-head address { text-align: right; color: var(--muted); }
+.inv-to { margin-bottom: 36px; font-size: 17px !important; }
+.invoice h1 { font-size: clamp(26px, 5vw, 34px); margin: 0 0 18px; }
+.inv-meta { display: flex; flex-wrap: wrap; gap: 12px 40px; margin: 0 0 28px; }
+.inv-meta dt { font-size: 14px; color: var(--muted); }
+.inv-meta dd { margin: 0; font-weight: 600; }
+.inv-items { width: 100%; border-collapse: collapse; }
+.inv-items th, .inv-items td { text-align: left; padding: 11px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.inv-items .num { text-align: right; padding-left: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.inv-items thead th { font-size: 14px; font-weight: 500; color: var(--muted); }
+.inv-items tfoot th { font-size: 19px; border-bottom: 0; padding-top: 16px; }
+
+/* Schweizer Zahlteil: 210 x 105 mm */
+.qrbill { display: flex; background: #fff; color: #000; font-family: Arial, Helvetica, sans-serif; width: 210mm; max-width: 100%; min-height: 105mm; border: 1px solid var(--line); border-top: 1px dashed #000; }
+.qrbill h2 { font: 700 11pt Arial, Helvetica, sans-serif; margin: 0 0 3mm; }
+.qrbill h3 { font: 700 8pt/11pt Arial, Helvetica, sans-serif; margin: 0; }
+.qrbill p { font-size: 10pt; line-height: 11pt; margin: 0 0 3mm; overflow-wrap: anywhere; }
+.qr-receipt { flex: 0 0 62mm; width: 62mm; padding: 5mm; border-right: 1px dashed #000; }
+.qr-receipt h3 { font-size: 6pt; line-height: 9pt; }
+.qr-receipt p { font-size: 8pt; line-height: 9pt; }
+.qr-pay { flex: 1; min-width: 0; display: flex; padding: 5mm; gap: 5mm; }
+.qr-left { flex: 0 0 51mm; width: 51mm; }
+.qr-right { flex: 1; min-width: 0; }
+.qr-code { width: 46mm; max-width: 100%; margin: 2mm 0 5mm; }
+.qr-code svg { display: block; width: 100%; height: auto; }
+.qr-sum { display: flex; gap: 6mm; }
+.qr-accept { font-size: 6pt !important; font-weight: 700; text-align: right; margin-top: 4mm !important; }
+@media (max-width: 760px) {
+  .qrbill { flex-direction: column; width: 100%; }
+  .qr-receipt { width: auto; flex: none; border-right: 0; border-bottom: 1px dashed #000; }
+  .qr-pay { flex-wrap: wrap; }
+}
+@media print {
+  @page { size: A4; margin: 0; }
+  .invoice-page { background: #fff; }
+  .invoice-wrap { max-width: none; padding: 0; }
+  .invoice { border: 0; padding: 18mm 15mm; }
+  .qrbill { position: fixed; left: 0; bottom: 0; width: 210mm; border: 0; border-top: 1px dashed #000; }
+}
+
+/* Konto und Verwaltung auf dem Handy */
+.top-actions .btn { white-space: nowrap; }
+@media (max-width: 760px) {
+  .topbar.logged .top-phone { display: none; }
+  .grid > * { min-width: 0; }
+  table.list { display: block; overflow-x: auto; white-space: nowrap; }
+}
+@media (max-width: 400px) {
+  .topbar.logged .brand img { height: 36px; }
+  .topbar.logged .btn { padding-inline: 10px; font-size: 14px; }
+}
+@media (max-width: 340px) {
+  .topbar.logged .lang { display: none; }
+  .inv-head { flex-wrap: wrap; }
+  .inv-head address { text-align: left; }
+}

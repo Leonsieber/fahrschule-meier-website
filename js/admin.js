@@ -451,6 +451,7 @@
             <button class="btn btn-cyan">Speichern</button>
           </form>
         </div>
+        <div class="grid">
         <form class="card" id="qrForm">
           <h3>Rechnungsangaben (QR-Rechnung)</h3>
           <p class="muted" style="font-size:14px">Mit IBAN und Adresse bekommt jede Rechnung automatisch einen Schweizer QR-Einzahlungsschein.</p>
@@ -459,7 +460,21 @@
           ${f('iban', 'IBAN oder QR-IBAN', 'text', 'placeholder="CH.. .... .... .... .... ."')}
           <button class="btn btn-cyan">Speichern</button>
         </form>
+        <form class="card" id="pwForm">
+          <h3>Mein Passwort ändern</h3>
+          <div class="field"><label>Aktuelles Passwort</label><input name="current" type="password" autocomplete="current-password" required></div>
+          <div class="field"><label>Neues Passwort (mindestens 8 Zeichen)</label><input name="next" type="password" autocomplete="new-password" minlength="8" required></div>
+          <div class="form-error" role="alert"></div>
+          <button class="btn">Passwort ändern</button>
+        </form>
+        </div>
       </div>`;
+    view.querySelector('#pwForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const err = e.target.querySelector('.form-error'); err.textContent = '';
+      try { await App.api('POST', '/api/me/password', Object.fromEntries(new FormData(e.target))); e.target.reset(); App.toast('Passwort geändert.'); }
+      catch (ex) { err.textContent = App.errText(ex); }
+    });
     view.querySelectorAll('[data-save-lt]').forEach((b) => b.onclick = async () => {
       const tr = b.closest('tr');
       try {
