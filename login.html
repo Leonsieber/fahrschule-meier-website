@@ -6,7 +6,7 @@
   <meta name="robots" content="noindex">
   <title>Login – Fahrschule Meier</title>
   <link rel="icon" href="img/mark-dark.png">
-  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/style.css?v=5">
 </head>
 <body>
   <header class="topbar" id="topbar"></header>
@@ -61,8 +61,8 @@
       </div>
     </div>
   </main>
-  <script src="js/i18n.js?v=4"></script>
-  <script src="js/common.js?v=4"></script>
+  <script src="js/i18n.js?v=5"></script>
+  <script src="js/common.js?v=5"></script>
   <script>
   (async function () {
     const hash = location.hash.slice(1);
@@ -71,12 +71,6 @@
     if (u) return go(u);
     App.renderHeader();
     App.applyStatic();
-    if (App.staticHost) {
-      const note = document.createElement('p');
-      note.className = 'preview-note';
-      note.textContent = App.t('err.preview');
-      document.querySelector('.auth-form').prepend(note);
-    }
     // Direkter Kontakt als Alternative zum Konto
     try {
       const c = (await App.api('GET', '/api/public?lang=' + App.lang)).content;

@@ -1,5 +1,7 @@
 {
+  "framework": null,
   "regions": ["fra1"],
+  "redirects": [{ "source": "/lib/:path*", "destination": "/", "permanent": false }],
   "rewrites": [{ "source": "/api/:path((?!index$).*)", "destination": "/api/index?__p=:path" }],
   "headers": [
     {

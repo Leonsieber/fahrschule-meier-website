@@ -1,5 +1,10 @@
 // Gemeinsame Hilfsfunktionen für alle Seiten
 (function () {
+  // Die Seite ist umgezogen: alte GitHub-Pages-Adressen führen zur neuen Adresse
+  if (location.hostname.endsWith('.github.io')) {
+    location.replace('https://fahrschule-meier-website.vercel.app' + location.pathname.replace(/^\/fahrschule-meier-website/, '') + location.search + location.hash);
+    return;
+  }
   // Speicher für die Spracheinstellung (localStorage, sonst window.name als Ersatz)
   const store = {
     get(k) { try { const v = localStorage.getItem(k); if (v !== null) return v; } catch { /* gesperrt */ } try { return JSON.parse(window.name || '{}')['pref_' + k] ?? null; } catch { return null; } },
@@ -19,19 +24,7 @@
       return s;
     },
     esc(s) { return String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); },
-    // Auf statischem Hosting gibt es kein Backend: Texte kommen aus data/public.json
-    staticHost: /\.github\.io$/.test(location.hostname),
-    async publicData(url) {
-      const lang = new URL(url, location.href).searchParams.get('lang') || 'de';
-      const all = await (await fetch('data/public.json', { cache: 'no-cache' })).json();
-      return { content: { ...all.content.de, ...(all.content[lang] || {}) }, lessonTypes: all.lessonTypes, adminFee: all.adminFee };
-    },
     async api(method, url, body, isForm) {
-      if (App.staticHost) {
-        if (url.startsWith('/api/public')) return App.publicData(url);
-        if (url === '/api/me' && method === 'GET') return { user: null };
-        const e = new Error('preview'); e.code = 'preview'; throw e;
-      }
       const opt = { method, headers: { 'X-Requested-With': 'fetch' }, credentials: 'same-origin' };
       if (body && !isForm) { opt.headers['Content-Type'] = 'application/json'; opt.body = JSON.stringify(body); }
       if (isForm) opt.body = body;
