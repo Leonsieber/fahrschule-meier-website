@@ -46,7 +46,7 @@
       const v = c[el.dataset.k] || '';
       if (el.id === 'places' && !editing) {
         el.classList.remove('pre');
-        el.innerHTML = v.split('\n').filter((s) => s.trim()).map((s) => `<li><span>${esc(s)}</span>${App.icon('arrow')}</li>`).join('');
+        el.innerHTML = v.split('\n').filter((s) => s.trim()).map((s) => `<li>${esc(s)}</li>`).join('');
       } else if (el.hasAttribute('data-first-para') && !editing) {
         el.textContent = v.split(/\n\s*\n/)[0];
       } else {

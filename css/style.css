@@ -128,13 +128,13 @@ body.editing .hero-photo .ph-tools { pointer-events: auto; }
 .hero-map .m-minor { fill: none; stroke: #4ba3da; stroke-width: 1.1; }
 .hero-map .m-major { fill: none; stroke: #7cc0e8; stroke-width: 1.7; }
 .hero-map .m-motorway { fill: none; stroke: #a5d4f0; stroke-width: 2.6; }
-.hero-map .m-route { fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 1; }
-.hero-map .m-place text { fill: #fff; font: 600 17px var(--body); paint-order: stroke; stroke: var(--blue); stroke-width: 4px; }
+.hero-map .m-route { fill: none; stroke: #fff; stroke-width: 4.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1 1; }
+.hero-map .m-place text { fill: #fff; font: 600 20px var(--body); paint-order: stroke; stroke: var(--blue); stroke-width: 4.5px; }
 .hero-map .m-place circle { fill: var(--blue); stroke: #fff; stroke-width: 2.5; transition: fill .3s; }
 .hero-map .m-hub.on circle { fill: #fff; }
 .hero-map .m-home circle { fill: #fff; stroke: none; }
-.hero-map .m-home text { font-size: 14px; font-weight: 500; }
-.hero-map .m-ctx text { fill: var(--on-blue-2); font-size: 13px; font-weight: 500; stroke-width: 3px; }
+.hero-map .m-home text { font-size: 16px; font-weight: 500; }
+.hero-map .m-ctx text { fill: var(--on-blue-2); font-size: 15px; font-weight: 500; stroke-width: 3px; }
 .hero-map .m-ctx circle { fill: var(--on-blue-2); stroke: none; }
 .hero-map [data-place="Weinfelden"] { display: none; }
 .hero-map .m-plate rect { fill: var(--blue-deep); stroke: #fff; stroke-width: 2.5; }
@@ -150,10 +150,10 @@ body.editing .hero-photo .ph-tools { pointer-events: auto; }
 .map-light .m-major { fill: none; stroke: #fff; stroke-width: 3; }
 .map-light .m-motorway { fill: none; stroke: #f4cf8e; stroke-width: 3.4; }
 .map-light .m-route { fill: none; stroke: var(--blue); stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
-.map-light .m-place text { fill: var(--ink); font: 600 12.5px var(--body); paint-order: stroke; stroke: rgba(255, 255, 255, .9); stroke-width: 3px; }
+.map-light .m-place text { fill: var(--ink); font: 600 15px var(--body); paint-order: stroke; stroke: rgba(255, 255, 255, .9); stroke-width: 3px; }
 .map-light .m-place circle { fill: #fff; stroke: var(--blue); stroke-width: 2.5; }
 .map-light .m-home circle { fill: var(--blue); stroke: #fff; stroke-width: 2; r: 6px; }
-.map-light .m-ctx text { fill: var(--muted); font-size: 10.5px; font-weight: 500; }
+.map-light .m-ctx text { fill: var(--muted); font-size: 13px; font-weight: 500; }
 .map-light .m-ctx circle { fill: var(--muted); stroke: none; }
 .map-light .m-plate { display: none; }
 
@@ -696,4 +696,17 @@ body { padding-top: var(--top); }
 @media (max-width: 420px) {
   .signs li { font-size: 18px; padding: 13px 12px; gap: 8px; }
   .signs .ico { width: 20px; height: 20px; }
+}
+
+/* Handy: die Karte zeigt mehr Gebiet, darum Beschriftung und Route etwas grösser */
+@media (max-width: 960px) {
+  .hero-map .m-place text { font-size: 26px; stroke-width: 5px; }
+  .hero-map .m-home text { font-size: 21px; }
+  .hero-map .m-ctx text { font-size: 20px; }
+  .hero-map .m-route { stroke-width: 6; }
+  .map-light .m-place text { font-size: 27px; stroke-width: 5px; }
+  .map-light .m-home text { font-size: 24px; }
+  .map-light .m-ctx text { font-size: 23px; }
+  .map-light .m-route { stroke-width: 5.5; }
+  .map-light .m-place circle { r: 7px; }
 }
