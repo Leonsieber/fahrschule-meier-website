@@ -121,7 +121,8 @@
       el.querySelector('#logoutBtn')?.addEventListener('click', App.logout);
       el.querySelector('#logoutNav')?.addEventListener('click', (e) => { e.preventDefault(); App.logout(); });
       // Kopfzeile wird beim Scrollen schmaler
-      const onScroll = () => el.classList.toggle('scrolled', window.scrollY > 24);
+      // Mit Abstand zwischen Ein- und Ausschalten, damit es an der Grenze nicht hin und her springt
+      const onScroll = () => { const y = window.scrollY; if (y > 48) el.classList.add('scrolled'); else if (y < 12) el.classList.remove('scrolled'); };
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     },
